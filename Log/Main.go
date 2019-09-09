@@ -51,7 +51,7 @@ func (l logger) Close() {
 	l.errFile.Close()
 }
 
-// return (origin, revert)
+// return (origin Line, revert Line)
 func (l logger) ReadTXT(prefix string) ([]string, []string) {
 	if strings.Contains(l.config.InfoPrefix, prefix) {
 		return readFile(l.config.InfoFileName)
